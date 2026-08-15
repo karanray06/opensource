@@ -28,12 +28,16 @@ export const metadata: Metadata = {
 	robots: { index: true, follow: true },
 };
 
+import { ToastProvider } from "@/components/ui/Toast";
+
 export default function RootLayout({
 	children,
 }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-			<body>{children}</body>
+			<body>
+				<ToastProvider>{children}</ToastProvider>
+			</body>
 		</html>
 	);
 }
